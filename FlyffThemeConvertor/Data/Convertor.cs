@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,7 @@ namespace FlyffThemeConverter
             {
                 String _file = Path.GetFileNameWithoutExtension(file);
                 TargaImage _image = new TargaImage(file);
-                _image.Image.Save(output + "\\" + _file + ".png");
+                _image.Image.Save(output + "\\" + _file + ".png", ImageFormat.Png);
                 _image.Dispose();
             }
             catch (Exception) { }
